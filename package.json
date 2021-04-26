@@ -1,0 +1,25 @@
+{
+  "name": "angular-hackathon",
+  "version": "1.0.0",
+  "description": "CRUD de angular, no curso da Hackathon",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samuelhenrq/angular-hackathon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samuelhenrq/angular-hackathon/issues"
+  },
+  "homepage": "https://github.com/Samuelhenrq/angular-hackathon#readme",
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-route": "^1.5.8",
+    "bootstrap": "^4.4.1"
+  }
+}
