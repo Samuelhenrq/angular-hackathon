@@ -1,11 +1,24 @@
 angular.module("app").controller("CadastroController", CadastroController);
-CadastroController.$inject = ["$location"];
+CadastroController.$inject = ["$location", "CursoService"];
 
-    function CadastroController($location){
+    function CadastroController($location, CursoService){
         vm = this;
-        vm.teste = "Cadastro"
+        vm.texto = "Cadastro"
+        vm.cliente = {}
 
-        vm.navegar = function(){
-            $location.path("/")
+        vm.navegar = (navegar)=>{
+            $location.path(navegar)
+        }
+
+        vm.cadastrar = function(){
+            CursoService.exec_POST(vm.cliente).then(function(resposta){
+                if(resposta){
+                    vm.clientes = resposta
+                }
+            })
+            vm.navegar("/")
+        }
+        vm.limpar = function(){
+            vm.cliente = {}
         }
     }

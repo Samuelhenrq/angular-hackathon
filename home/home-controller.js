@@ -6,6 +6,10 @@ HomeController.$inject = ["$location", "CursoService"];
         vm.texto = "Home";
         vm.clientes = ""
 
+        vm.init = ()=>{
+            vm.listarClientes()
+        }
+
         vm.navegar = ()=>{
             $location.path("cadastro")
         }
@@ -13,7 +17,7 @@ HomeController.$inject = ["$location", "CursoService"];
         vm.listarClientes = ()=>{
             CursoService.exec_GET().then((resposta)=>{
                 if(resposta){
-                    console.log(resposta)
+                    vm.clientes =resposta
                 }
             })
         }

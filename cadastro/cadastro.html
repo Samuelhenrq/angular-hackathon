@@ -1,4 +1,16 @@
+<h1>{{vm.teste}}</h1>
 <div class="container">
-    <h1>{{vm.teste}}</h1>
-    <button type="button" class="btn btn-primary" ng-click="vm.navegar()">Navegar</button>
+    <form>
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="nome" ng-model="vm.cliente.nome" placeholder="Nome do cliente">
+        </div>
+        <div class="form-group">
+          <label for="rg">RG:</label>
+          <input type="text" class="form-control" id="rg" ng-model="vm.cliente.rg" placeholder="RG do cliente">
+        </div>
+    </form>
+    <button type="button" class="btn btn-secondary" ng-click="vm.cadastrar()">Cadastrar</button>
+    <button type="button" class="btn btn-dark" ng-click="vm.limpar()">Limpar</button>
+
 </div>

@@ -46,14 +46,15 @@
             }
         }
     </script>
-    <nav ng-controller="NavController as vm">
-        <ul class="nav nav-tabs">    <!--função do angular que repete conforme no array-->
-            <li class="nav-item" ng-repeat="item in vm.itensNav">
-                <a ng-class="item.class" class="nav-link active" ng-click="vm.navegar(item.titulo, vm.itensNav)">{{item.titulo}}</a>
-            </li>
-        </ul>
-    </nav>
-    <div ng-view></div> <!--o Simple application esta sendo renderizado aqui-->
-
+    <div class="container">
+        <nav ng-controller="NavController as vm">
+            <ul class="nav nav-tabs">    <!--função do angular que repete conforme no array-->
+                <li class="nav-item" ng-repeat="item in vm.itensNav">
+                    <a ng-class="item.class" class="nav-link active" ng-click="vm.navegar(item.titulo, vm.itensNav)">{{item.titulo}}</a>
+                </li>
+            </ul>
+        </nav>
+        <div ng-view></div> <!--o Simple application esta sendo renderizado aqui-->
+    </div>
 </body>
 </html>

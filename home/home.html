@@ -1,4 +1,22 @@
-<div>
-    <h1>{{vm.texto}}</h1>
-    <button type="button" class="btn btn-primary" ng-click="vm.listarClientes()">Lista</button>
+<!--                   ng-init: essa tag chama a função quando carrega a tela-->
+<div class="container" ng-init="vm.init()">
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">RG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="cliente in vm.clientes">
+            <th scope="row">{{cliente.id}}</th>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.rg}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
 </div>
+    
