@@ -20,8 +20,39 @@
     <script src="cadastro/cadastro-controller.js"></script>
     <script src="home/home-controller.js"></script>
 
+    <script src="curso-service.js"></script>
+
 </head>
 <body>
+    <script>
+        angular.module("app").controller("NavController", NavController)
+        NavController.$inject = ["$location"]
+        function NavController($location){
+            vm = this
+            vm.itensNav =[
+                {titulo: "Home", class: "nav-link active"},
+                {titulo: "Cadastro", class: "nav-link"}
+            ]
+            vm.navegar = (navegar, array)=>{
+                angular.forEach(array, (item)=>{
+                    if(item.titulo == navegar){
+                        item.class = "nav-link active"
+                    }else{
+                        item.class = "nav-link"
+                    }
+                })
+
+               $location.path(navegar)
+            }
+        }
+    </script>
+    <nav ng-controller="NavController as vm">
+        <ul class="nav nav-tabs">    <!--função do angular que repete conforme no array-->
+            <li class="nav-item" ng-repeat="item in vm.itensNav">
+                <a ng-class="item.class" class="nav-link active" ng-click="vm.navegar(item.titulo, vm.itensNav)">{{item.titulo}}</a>
+            </li>
+        </ul>
+    </nav>
     <div ng-view></div> <!--o Simple application esta sendo renderizado aqui-->
 
 </body>

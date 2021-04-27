@@ -1,11 +1,20 @@
 angular.module("app").controller("HomeController", HomeController);
-HomeController.$inject = ["$location"];
+HomeController.$inject = ["$location", "CursoService"];
 
-    function HomeController($location){
+    function HomeController($location, CursoService){
         vm = this;
-        vm.teste = "Home";
+        vm.texto = "Home";
+        vm.clientes = ""
 
-        vm.navegar = function(){
+        vm.navegar = ()=>{
             $location.path("cadastro")
+        }
+
+        vm.listarClientes = ()=>{
+            CursoService.exec_GET().then((resposta)=>{
+                if(resposta){
+                    console.log(resposta)
+                }
+            })
         }
     }
