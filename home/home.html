@@ -14,6 +14,8 @@
             <th scope="row">{{cliente.id}}</th>
             <td>{{cliente.nome}}</td>
             <td>{{cliente.rg}}</td>
+            <td><button type="button" class="btn btn-outline-secondary" ng-click="vm.editar(cliente.id)">Editar</button></td>
+            <td><button type="button" class="btn btn-outline-dark" ng-click="vm.deletar(cliente.id)">Apagar</button></td>
           </tr>
           
         </tbody>

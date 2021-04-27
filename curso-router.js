@@ -1,6 +1,6 @@
 angular.module("app").config(function($routeProvider){
-    $routeProvider
-        .when("/Cadastro", {
+    $routeProvider          // ? diz que a rota é opcional
+        .when("/Cadastro/:idCli?", {
             templateUrl: "cadastro/cadastro.html",
             controller: "CadastroController as vm"
         })

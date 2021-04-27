@@ -8,9 +8,11 @@
         <div class="form-group">
           <label for="rg">RG:</label>
           <input type="text" class="form-control" id="rg" ng-model="vm.cliente.rg" placeholder="RG do cliente">
+        <h1>{{vm.cliente.id}}</h1>
         </div>
     </form>
-    <button type="button" class="btn btn-secondary" ng-click="vm.cadastrar()">Cadastrar</button>
+    <button type="button" class="btn btn-secondary" ng-click="vm.cadastrar()">{{vm.textoBotao}}</button>
     <button type="button" class="btn btn-dark" ng-click="vm.limpar()">Limpar</button>
+    
 
 </div>

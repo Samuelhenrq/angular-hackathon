@@ -10,8 +10,8 @@ HomeController.$inject = ["$location", "CursoService"];
             vm.listarClientes()
         }
 
-        vm.navegar = ()=>{
-            $location.path("cadastro")
+        vm.navegar = (navegar, id)=>{
+            $location.path(navegar + "/" + id)
         }
 
         vm.listarClientes = ()=>{
@@ -21,4 +21,15 @@ HomeController.$inject = ["$location", "CursoService"];
                 }
             })
         }
+        vm.deletar = (id)=>{
+            CursoService.exec_DELETE(id).then((resposta)=>{
+                if(resposta){
+                    //vm.clientes =resposta
+                }
+            })
+        }
+        vm.editar = (id)=>{
+            vm.navegar("Cadastro", id)
+            
+        }       
     }
