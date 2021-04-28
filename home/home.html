@@ -1,16 +1,25 @@
 <!--                   ng-init: essa tag chama a função quando carrega a tela-->
 <div class="container" ng-init="vm.init()">
 
-    <table class="table">
+    <div class="container" ng-if="vm.erro">
+      <alert-para-usuario msg= "'A conexão com o banco de dados falhou!'" tipo="'erro'"></alert-para-usuario>
+    </div>
+
+    <label for="exampleFormControlInput1" class="form-label">Pesquisa</label>
+    <input class="form-control" id="exampleFormControlInput1" ng-model="vm.filtroPesquisa" placeholder="Filtrar...">
+    
+    <table class="table" ng-if="vm.clientes">
         <thead>
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">RG</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Apagar</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="cliente in vm.clientes">
+          <tr ng-repeat="cliente in vm.clientes | filter : vm.filtroPesquisa">
             <th scope="row">{{cliente.id}}</th>
             <td>{{cliente.nome}}</td>
             <td>{{cliente.rg}}</td>

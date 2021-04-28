@@ -5,6 +5,7 @@ HomeController.$inject = ["$location", "CursoService"];
         vm = this;
         vm.texto = "Home";
         vm.clientes = ""
+        vm.erro = false
 
         vm.init = ()=>{
             vm.listarClientes()
@@ -18,6 +19,8 @@ HomeController.$inject = ["$location", "CursoService"];
             CursoService.exec_GET().then((resposta)=>{
                 if(resposta){
                     vm.clientes =resposta
+                }else{
+                    vm.erro = true
                 }
             })
         }

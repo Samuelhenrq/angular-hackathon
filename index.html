@@ -22,8 +22,12 @@
 
     <script src="curso-service.js"></script>
 
+    <script src="components/componente-alert.js"></script>
+
 </head>
+
 <body>
+    
     <script>
         angular.module("app").controller("NavController", NavController)
         NavController.$inject = ["$location"]
@@ -46,7 +50,7 @@
             }
         }
     </script>
-    <div class="container">
+    <div class="container" style="margin-top: 25px;">
         <nav ng-controller="NavController as vm">
             <ul class="nav nav-tabs">    <!--função do angular que repete conforme no array-->
                 <li class="nav-item" ng-repeat="item in vm.itensNav">
